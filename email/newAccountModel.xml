@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- type_of_email, sender_email, sender_name, reply_to, attachments, recipient_email, firstname, surname, password, url -->
+<mail-notification>
+	<header_data>
+		<type_of_email>
+			<type>string</type>
+			<mandatory>1</mandatory>
+		</type_of_email>
+		<sender_email>
+			<type>string</type>
+			<mandatory>1</mandatory>
+		</sender_email>
+		<sender_name>
+			<type>string</type>
+			<mandatory>1</mandatory>
+		</sender_name>	
+		<reply_to>
+			<type>string</type>
+			<mandatory>0</mandatory>
+		</reply_to>		
+		<attachments>
+			<type>array</type>
+			<mandatory>0</mandatory>
+		</attachments>		
+	</header_data>
+	<content_data>
+		<recipient_email>
+			<type>string</type>
+			<mandatory>1</mandatory>
+		</recipient_email>
+		<firstname>
+			<type>string</type>
+			<mandatory>1</mandatory>
+		</firstname>
+		<surname>
+			<type>string</type>
+			<mandatory>1</mandatory>
+		</surname>
+		<password>
+			<type>string</type>
+			<mandatory>1</mandatory>
+		</password>
+		<url>
+			<type>string</type>
+			<mandatory>1</mandatory>
+		</url>
+	</content_data>
+</mail-notification>

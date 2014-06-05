@@ -1,0 +1,35 @@
+RewriteEngine On
+RewriteCond %{QUERY_STRING}   (.*)=http(.*)   [NC,OR]
+RewriteCond %{QUERY_STRING}   (.*)=ftp(.*)   [NC,OR]
+RewriteCond %{QUERY_STRING}   (.*)urlx=(.*)   [NC]
+RewriteRule ^(.*)  - [F]
+
+
+# compression before sending
+SetOutputFilter DEFLATE
+SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip
+
+
+RewriteRule ^de/gift/(.*)/?$ index.php?p=give&gift=yes&id=$1&lang=de [L]
+RewriteRule ^en/gift/(.*)/?$ index.php?p=give&gift=yes&id=$1&lang=en [L]
+
+RewriteRule ^de/gift/notactive/?$ index.php?p=give&gift=notactive&id=$1&lang=de [L]
+RewriteRule ^en/gift/notactive/?$ index.php?p=give&gift=notactive&id=$1&lang=en [L]
+
+RewriteRule ^de/give/(.*)/?$ index.php?p=give&id=$1&lang=de [L]
+RewriteRule ^en/give/(.*)/?$ index.php?p=give&id=$1&lang=en [L]
+
+RewriteRule ^de/hotelDetails/(.*)/?$ index.php?p=hotelDetails&view=detail&id=$1&lang=de [L]
+RewriteRule ^en/hotelDetails/(.*)/?$ index.php?p=hotelDetails&view=detail&id=$1&lang=en [L]
+
+RewriteRule ^de/detail/(.*)/?$ index.php?p=give&view=detail&id=$1&lang=de [L]
+RewriteRule ^en/detail/(.*)/?$ index.php?p=give&view=detail&id=$1&lang=en [L]
+
+RewriteRule ^de/register/(.*)/?$ index.php?p=register&register=$1&lang=de [L]
+RewriteRule ^en/register/(.*)/?$ index.php?p=register&register=$1&lang=en [L]
+
+RewriteRule ^de/myGifts/(.*)/?$ index.php?p=myGifts&list=$1&lang=de [L]
+RewriteRule ^en/myGifts/(.*)/?$ index.php?p=myGifts&list=$1&lang=en [L]
+
+RewriteRule ^de/(.*)/?$ index.php?p=$1&lang=de [L]
+RewriteRule ^en/(.*)/?$ index.php?p=$1&lang=en [L]
